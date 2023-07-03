@@ -1,6 +1,6 @@
 // ReactElement 对象
 
-import createTextElement from "./createTextElement";
+import createTextElement from "./createTextElement.js";
 
 export default function createElement(type, props, ...children) {
   return {
