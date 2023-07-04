@@ -1,32 +1,48 @@
-import Didact from "./Didact/index.js";
+import Didact from './Didact/index.js';
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 
-// const element = {
-//   type: "h1",
-//   props: {
-//     title: "foot",
-//     children: "hello",
+// const element = Didact.createElement(
+//   'div',
+//   {
+//     id: 'foo',
 //   },
-// };
+//   Didact.createElement('a', null, 'bar'),
+//   Didact.createElement(
+//     'div',
+//     {
+//       id: 'foo-1',
+//       name: 'click',
+//       class: 'foo-1',
+//       onClick: () => {
+//         console.log('zsf');
+//       },
+//     },
+//     '123'
+//   )
+// );
 
-// const node = document.createElement(element.type);
-// node["title"] = element.props.title;
+function App(props) {
+  return Didact.createElement(
+    'div',
+    {
+      id: 'foo',
+    },
+    Didact.createElement('a', null, 'bar'),
+    Didact.createElement(
+      'div',
+      {
+        id: 'foo-1',
+        name: 'click',
+        class: 'foo-1',
+        onClick: () => {
+          console.log('zsf');
+        },
+      },
+      '123'
+    )
+  );
+}
 
-// const text = document.createTextNode("");
-// text.nodeValue = element.props.children;
-
-// node.appendChild(text);
-
-// container.appendChild(node);
-
-const element = Didact.createElement(
-  "div",
-  {
-    id: "foo",
-  },
-  Didact.createElement("a", null, "bar"),
-  Didact.createElement("b")
-);
-
+const element = Didact.createElement(App, { name: 'foo' });
 Didact.render(element, container);
