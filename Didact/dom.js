@@ -28,12 +28,12 @@ export function updateDom(dom, prevProps, nextProps) {
   Object.keys(prevProps)
     .filter(isProperty)
     .filter(isGone)
-    .forEach((name) => (key[name] = ''));
+    .forEach((name) => (dom[name] = ''));
   // Set new or changed properties
   Object.keys(nextProps)
     .filter(isProperty)
     .filter(isNew)
-    .forEach((name) => (key[name] = prevProps[name]));
+    .forEach((name) => (dom[name] = nextProps[name]));
   //Remove old or changed event listeners
   Object.keys(prevProps)
     .filter(isEvent)
